@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    
+</head>
+<body>
+<span>Number</span>
+    <br />
+    <input type="text" id="txtNumber" />
+    <br />
+    <button id="btnRoot">Root</button>
+    <br />
+    <br />
+    <span id="spResult" style="background-color:red"></span
+<br />
+    <button id="btDialog">Dialogs</button>
+    <script>
+        //immediate script
+        var button = document.getElementById("btnRoot");//Searching for an element with id=>btnRoot
+        button.onclick = clickHandler;
+
+        //deferred Script
+        function clickHandler()
+        {
+            var number = document.getElementById("txtNumber");
+            number = parseFloat(number.value);
+
+            var root = Math.sqrt(number);
+
+            var result = document.getElementById('spResult');
+            result.innerText = "Root is " +root;
+        }
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        document.getElementById('btDialog').onclick = function ()
+        {
+            var number=prompt('Enter a Number ', 0);
+            var calculate = confirm("Want to calculate square?");
+            if (calculate)
+            {
+                var n = parseInt(number);
+                alert("Square is: " + n * n);
+            }
+            else
+                alert("You decided otherwise.");
+        }
+    </script>
+
+</body>
+
+</html>

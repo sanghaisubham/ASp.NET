@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #dv1
+        {
+            height:100px;
+            width:140px;
+            background-color:red;
+            border:2px solid black;
+            position:absolute;
+            top:100px;
+            left:100px;
+        }
+        #dv2 {
+            height: 100px;
+            width: 140px;
+            background-color: rgba(25,50,199,0.34);
+            border: 2px solid green;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            transform: scale(2,2);
+            -webkit-transform: scaleX(2); /*chrome version*/
+            -moz-transform: scaleX(2); /*mozilla version*/
+            -ms-transform: scaleX(2); /*internet explorer version*/
+            -o-transform: scaleX(2); /*opera version*/
+            transform: skew(40deg,20deg);
+            transform: skewX(40deg);
+            transform: skewY(20deg);
+
+            transform: translate(100px,40px);
+            transform: translateX(100px);
+            transform-origin:top left;
+            transform:rotate(60deg);
+
+
+        }
+    </style>
+</head>
+<body>
+<div id="dv1"></div>
+<div id="dv2"></div>
+</body>
+</html>

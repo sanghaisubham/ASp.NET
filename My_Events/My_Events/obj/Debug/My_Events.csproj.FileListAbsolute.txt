@@ -1,0 +1,10 @@
+c:\users\subham\source\repos\My_Events\My_Events\obj\Debug\My_Events.csprojResolveAssemblyReference.cache
+c:\users\subham\source\repos\My_Events\My_Events\obj\Debug\My_Events.Form1.resources
+c:\users\subham\source\repos\My_Events\My_Events\obj\Debug\My_Events.Properties.Resources.resources
+c:\users\subham\source\repos\My_Events\My_Events\obj\Debug\My_Events.csproj.GenerateResource.Cache
+c:\users\subham\source\repos\My_Events\My_Events\obj\Debug\My_Events.csproj.CoreCompileInputs.cache
+c:\users\subham\source\repos\My_Events\My_Events\bin\Debug\My_Events.exe.config
+c:\users\subham\source\repos\My_Events\My_Events\bin\Debug\My_Events.exe
+c:\users\subham\source\repos\My_Events\My_Events\bin\Debug\My_Events.pdb
+c:\users\subham\source\repos\My_Events\My_Events\obj\Debug\My_Events.exe
+c:\users\subham\source\repos\My_Events\My_Events\obj\Debug\My_Events.pdb

@@ -1,0 +1,12 @@
+﻿.divNewstyle {
+    float: left;
+    border: 4px double red;
+    background-color: chartreuse;
+    width: 2in;
+    height: 4in;
+    font-family: 'Courier New';
+    font-size: 16px;
+    text-decoration: line-through;
+    font-weight: bold;
+    font-style: italic;
+}

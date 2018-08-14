@@ -1,0 +1,17 @@
+﻿@using MVC.Models;
+@Model List<emp>
+@{
+    ViewBag.Title = "GetAllEmps";
+}
+
+<h2>GetAllEmps</h2>
+    <table>
+        @foreach(emp em in Model)
+        {
+            <tr>
+                <td>@em.name</td>
+                <td>@em.salary</td>
+            </tr>
+        }
+    </table>
+

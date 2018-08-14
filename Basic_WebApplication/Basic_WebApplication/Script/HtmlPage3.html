@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+   
+</head>
+<body>
+    <table border="3">
+        <thead>
+            <tr>
+                <!--*******************************************
+                    td is for body row
+                    th is for header row
+                    th is bolder than td
+
+    -->
+
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr >
+                <td rowspan="2">10</td>
+                
+                <td>Amit</td>
+                <td>2000</td>
+            </tr>
+            <tr>
+               
+                <td>Ram</td>
+                <td>6000</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr><td colspan="3">Person Details </td></tr>
+        </tfoot>
+    </table>
+    <br />
+    <div id="dv"></div>
+    <button onclick="createTable()">Create Table</button>
+    <!--******************************************* 
+
+        
+    -->
+    <script>
+         var Person = function (id, name, age) {
+             this.Pid = id;//to access it outside, we use this
+             this.Name = name;
+             this.Age = age;
+             this.PersonDetails = function () {
+                 var details = this.Pid + ' ' + this.Name + ' ' + this.Age;
+                 return details;
+             }
+         };
+         var personArray = [];
+         //var personArray = new Array();
+         var p = new Person(10, 'Jim', 30);
+
+         personArray.push(p); //here we use push to push inside array
+
+         p = new Person(11, 'Mary', 35);
+         personArray.push(p);
+
+         p = new Person(12, 'Harry', 40);
+         personArray.push(p);
+
+         var temp = '';
+         for (var i = 0; i < personArray.length; i++)
+         {
+             temp += personArray[i].PersonDetails() + '<br/>';
+         }
+         
+         document.getElementById('dv').innerHTML = temp;
+         temp +='<hr/><br/>'
+         for (var k in personArray)
+         {
+             temp += personArray[k].PersonDetails() + '<br/>';
+         }
+         temp += '<br/>';
+         document.getElementById('dv').innerHTML = temp;
+         function createTable()
+         {
+             var table1 = document.createElement('table');
+             for (var k in personArray)
+             {
+                 row = document.createElement('tr');
+                 col = document.createElement('td');
+                 col.innerText = personArray[k].Pid;
+                 row.appendChild(col);
+
+                 col = document.createElement('td');
+                 col.innerText = personArray[k].Name;
+                 row.appendChild(col);
+
+                 col = document.createElement('td');
+                 col.innerText = personArray[k].Age;
+                 row.appendChild(col);
+
+                 table1.appendChild(row);
+             }
+             table1.setAttribute("border", 1);
+             document.getElementById('dv').appendChild(table1);
+         }
+         
+    </script>
+</body>
+</html>

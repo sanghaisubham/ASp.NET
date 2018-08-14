@@ -1,0 +1,20 @@
+﻿@using MVC.Models;
+@model List<emp>
+@{
+    ViewBag.Title = "ShowAll";
+}
+
+<h2>ShowAll</h2>
+<table class="table table-hover">
+        @foreach(emp em in Model)
+        {
+    <tr>
+        <td>@em.code</td>
+        <td>@em.name</td>
+        <td>@em.salary</td>
+        <td>@em.deptid</td>
+        </tr>
+
+        }
+    
+</table>

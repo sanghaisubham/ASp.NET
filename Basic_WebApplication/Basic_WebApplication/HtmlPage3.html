@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="Styles/StyleSheet1.css" rel="stylesheet" />
+    <!--name of css class always starts with a '.' -->
+    <style type="text/css">
+        .divstyle {
+            float: right;
+            border: 4px dashed blue;
+            background-color: yellowgreen;
+            width: 2in;
+            height: 4in;
+            font-family: 'Courier New',Arial,'Times New Roman';
+            font-size: 16px;
+            text-decoration: line-through;
+            font-weight: bold;
+            font-style: italic;
+        }
+    </style>
+    <title></title>
+    <!--Embeded=>style is embedded in head-->
+</head>
+<body>
+    <!--Inline-->
+    <div style="float:left;border:2px solid green;height:4in;width:5in">
+        <br />
+        <label> Name</label>
+        <input style="color:green;background-color:aqua;font-family:'Comic Sans MS' font-size:large"type="text" />
+    </div>
+    <!--Embedded-->
+    <div class="divNewstyle" style="background-color:red"> <!--Priority of inline is highest, though color was made green-->
+        Once Upon A Time there was a lion
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #div1 {
+            height: 4in;
+            width: 4in;
+            border: 30px solid;
+            position: absolute;
+            top: 30px;
+            left: 100px;
+            border-image-source: url('Images/penguin-153405_1280.png');
+            border-image-slice: 40%;
+            border-image-repeat: round;
+            border-image-outset: 1px;
+        }
+        .div2 {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            /*border-radius: 20px;
+            border-radius: 20px 0px;
+            border-radius: 20px 30px 40px;*/
+            border-radius: 20px 30px 40px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <div class="div2">
+
+    </div>
+</body>
+</html>

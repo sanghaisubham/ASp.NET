@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UHGDBModelStoreContainer" CdmEntityContainer="UHGDBEntities">
+    <EntitySetMapping Name="deptts">
+      <EntityTypeMapping TypeName="UHGDBModel.deptt">
+        <MappingFragment StoreEntitySet="deptt">
+          <ScalarProperty Name="deptid" ColumnName="deptid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="strength" ColumnName="strength" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="emps">
+      <EntityTypeMapping TypeName="UHGDBModel.emp">
+        <MappingFragment StoreEntitySet="emp">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="deptid" ColumnName="deptid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

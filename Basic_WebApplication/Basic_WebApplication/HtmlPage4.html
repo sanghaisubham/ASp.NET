@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div
+        {
+            height:100px;
+            width:300px;
+            background-color:green;
+            position:absolute;
+            top:100px;
+            left:200px;
+            box-shadow:10px 10px 5px black; 
+            /*vertical-align offset horizontal offset blurradius colorofshadow inset(inward direction shadow)*/
+
+        }
+        #p1
+        {
+            height:100px;
+            width:100px;
+            border:1px solid black;
+            background-color:red;
+            position:absolute;
+            right:100px;
+            bottom:30px;
+            z-index:1;
+        }
+
+        #p2 {
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            background-color: rgba(0,255,0,0.7);
+            position: absolute;
+            right: 140px;
+            bottom: 60px;
+            z-index:3;
+        }
+
+        #p3 {
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            background-color: blue;
+            position: absolute;
+            right: 170px;
+            bottom: 90px;
+            z-index:2;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+</body>
+</html>

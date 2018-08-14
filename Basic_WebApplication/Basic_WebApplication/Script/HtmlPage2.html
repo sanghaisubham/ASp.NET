@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function Method1()
+
+        {
+            //We dont create classes , we only create objects
+            //name is an object here
+            var name = new Object();
+            name.firstname = "Jim";
+            name.lastname = "Corbett";
+            name.fullname = function ()
+            {
+                return this.firstname + " " + this.lastname;
+            }
+            alert(name.fullname());
+
+            //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+            var newname = {
+                fName: 'Jim',
+                lName: 'Corbet',
+                fullname: function () {
+                    return this.firstname + " " + this.lastname;
+                }
+            };
+            alert(newname.fullname);
+        
+        }
+        //Method1();
+        function DateMethod()
+        {
+            var date = new Date();
+            alert(date.toDateString());
+            alert(date);
+            var d = date.getDate() + '/' + (date.getMonth()+1) + '/' + date.getFullYear();
+            alert(d);
+            //date = new Date(2010, 2, 20, 10, 23, 30);
+            date = new Date("January 1,2009 05:10:30");
+            alert(date);
+        }
+        DateMethod();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
