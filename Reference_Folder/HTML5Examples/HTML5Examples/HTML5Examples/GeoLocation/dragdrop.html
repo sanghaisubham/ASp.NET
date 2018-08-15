@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <style>
+        .imgstyle{
+            border:2px solid red;
+            height:150px;width:150px;
+            position:absolute; left:0px; top:100px;
+        }
+        .targetstyle{
+            height:200px; width:200px;
+            border:2px solid green;
+            position:absolute;
+                left:300px; top:0px;
+        }
+        p{
+            background-color:green;
+            color:white;
+            font-size:16px;
+            position:absolute;
+            top:0px; left:0px;
+        }
+    </style>
+</head>
+<body>
+    <p id="message">Hello</p>
+    <img draggable="true" id="img" src="Images/p.jpg" class="imgstyle"/>
+    <div id="target" class="targetstyle"></div>
+
+    <script>
+        var div = document.getElementById('target');
+        var img = document.getElementById('img');
+        var message = document.getElementById('message');
+
+        img.ondragstart=function(e)
+        {
+            e.dataTransfer.setData("id", e.target.id);
+            message.innerText = "Dragging start..";
+        }
+        div.ondragover = function (e) {
+            message.innerText = "Over target..";
+            e.preventDefault();
+        }
+        div.ondrop = function (e) {
+            var imgid = e.dataTransfer.getData("id");
+            var newimg = document.getElementById(imgid).cloneNode(false);
+            newimg.classList.remove('imgstyle');
+            div.appendChild(newimg);
+            message.innerText = "Dropped..";
+     
+        } 
+    </script>
+</body>
+</html>

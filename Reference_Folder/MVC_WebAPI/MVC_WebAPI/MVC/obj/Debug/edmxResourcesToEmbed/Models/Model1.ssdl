@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="newdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="deptt">
+    <Key>
+      <PropertyRef Name="deptid" />
+    </Key>
+    <Property Name="deptid" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="20" />
+    <Property Name="strength" Type="int" />
+  </EntityType>
+  <EntityType Name="emp">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="code" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="20" />
+    <Property Name="salary" Type="money" />
+    <Property Name="deptid" Type="int" />
+  </EntityType>
+  <Association Name="edfk">
+    <End Role="deptt" Type="Self.deptt" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="emp" Type="Self.emp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="deptt">
+        <PropertyRef Name="deptid" />
+      </Principal>
+      <Dependent Role="emp">
+        <PropertyRef Name="deptid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="newdbModelStoreContainer">
+    <EntitySet Name="deptt" EntityType="Self.deptt" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="emp" EntityType="Self.emp" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="edfk" Association="Self.edfk">
+      <End Role="deptt" EntitySet="deptt" />
+      <End Role="emp" EntitySet="emp" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

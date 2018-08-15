@@ -1,0 +1,11 @@
+aspnet_regsql -S localhost\sqlexpress -ssadd 
+-sstype p -E
+
+aspnet_regsql -S localhost\sqlexpress -ssadd 
+-sstype c -d newdb -E
+
+aspnet_regsql -S localhost\sqlexpress -ssadd 
+-sstype c -d newdb -U sa -P 123
+
+aspnet_regsql -S localhost\sqlexpress -ssadd 
+-sstype t -U sa -P 123

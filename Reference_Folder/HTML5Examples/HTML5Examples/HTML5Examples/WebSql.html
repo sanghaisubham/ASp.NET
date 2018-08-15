@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script>
+        var dbase = openDatabase("mydb", "1.0", "first database", 1024 * 1024 * 2);
+        function createTable()
+        {
+            //dbase.transaction(tran);
+            dbase.transaction(function (t)
+            {
+                t.executeSql("create table book(id integer primary key,title varchar(20),price float)",[],success,error);
+            });
+        }
+        //function tran(t) {   }
+        function success(transaction,response)
+        {
+            alert('Success..');
+        }
+        function error(transaction, response)
+        {
+            alert(response.message);
+        }
+        //~~~~~~~~~~~~~~~~~~insert rows~~~~~~~~~~~~~~~~~~~~~~~
+        function insertRows()
+        {
+            dbase.transaction(function (t) {
+                t.executeSql("insert into book values(10,'C#',2000),(11,'MVC',2000)",[],success,error);
+            });
+        }
+        function deleteRow()
+        {
+            dbase.transaction(function (t)
+            {
+                var bookid = document.getElementById('txtId').value;
+                t.executeSql('delete from book where id=?',[bookid],success,error);
+            });
+        }
+        //~~~~~~~~~~~~~select~~~~~~~~~~
+        function getAllBooks()
+        {
+            dbase.transaction(function (t) {
+                t.executeSql('select * from book', [], success2);
+            });
+            function success2(t, r) {
+                var details = '';
+                for(var i=0;i<r.rows.length;i++)
+                {
+                    details += r.rows[i].id + ' ';
+                    details += r.rows[i].title + ' ';
+                    details += r.rows[i].price + '\n';
+                }
+                alert(details);
+            }
+        }
+        
+    </script>
+</head>
+<body>
+<button onclick="createTable()">Create Table</button>
+<button onclick="insertRows()">Insert rows</button>
+    <br />
+    <br />
+    <span>Book Id</span><br/>
+    <input type="text" id="txtId" />
+    <br />
+    <button onclick="deleteRow()">Delete</button>
+    <br />
+    <button onclick="getAllBooks()">GetAllBooks</button>
+</body>
+</html>
+

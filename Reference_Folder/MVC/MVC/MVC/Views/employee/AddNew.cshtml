@@ -1,0 +1,27 @@
+﻿@using MVC.Models;
+@model emp
+@{
+    ViewBag.Title = "AddNew";
+}
+
+<h2>AddNew</h2>
+@using (Html.BeginForm("AddNew", "employee", FormMethod.Post))
+{
+    <label for="code">Code</label>
+    <br />
+    @Html.TextBoxFor(c=>c.code)
+    <br />
+    <label for="name">Name</label>
+    <br />
+    @Html.TextBoxFor(c=>c.name)
+    <br />
+    <label for="salary">Salary</label>
+    <br />
+    @Html.TextBoxFor(c => c.salary)
+    <br />
+    <label for="deptid">DeptId</label>
+    <br />
+    <input type="text" id="deptid" name="deptid" />
+    <br />
+    <input type="submit" value="Submit"/>
+}

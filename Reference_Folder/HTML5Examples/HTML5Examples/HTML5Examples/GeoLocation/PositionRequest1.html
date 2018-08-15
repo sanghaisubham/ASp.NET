@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>Position Request</h1>
+<pre>
+    void getCurrentPosition(in PositionCallback successCallback,
+        in optional PositionErrorCallback errorCallback,
+        in optional PositionOptions options);
+</pre>
+    <hr />
+    <div>
+        <div >
+            <button id="b1">Get Current Position</button>
+        </div>
+        <div id ="dv"></div>
+    </div>
+<script type="text/javascript">
+    document.getElementById('b1').onclick = function () {
+        navigator.geolocation.getCurrentPosition(success,
+            error,
+            {
+                timeout: 10000, //in ms ,def Infinity
+                enableHighAccuracy: true,
+                maximumAge: 10000    //in ms,def 0 
+            });
+        //var watchId= navigator.geolocation.watchPosition(success, error);
+        //navigator.geolocation.clearWatch(watchId);
+    }
+    function success(posObj) {
+        var str = '<ul>';
+        str += '<li>' + 'latitude:' + posObj.coords.latitude + '</li>';
+        str += '<li>' + 'longitude:' + posObj.coords.longitude + '</li>';
+        str += '<li>' + 'accuracy:' + posObj.coords.accuracy + ' metres'+ '</li>';   
+
+        str += '<li>' + 'timestamp:' + (new Date(posObj.timestamp)).toDateString() + '</li>';
+        str += '<li>' + 'altitude:' + posObj.coords.altitude + '</li>';
+        str += '<li>' + 'altitude-accuracy:' + posObj.coords.altitudeAccuracy + '</li>';
+        str += '<li>' + 'heading:' + posObj.coords.heading + ' degree north'+ '</li>';
+        str += '<li>' + 'speed:' + posObj.coords.speed + ' m/s ground speed'  + '</li>';
+
+        document.getElementById('dv').innerHTML = str;
+    }
+    function error(error) {
+        switch (error.code) {
+            case 0:
+                alert("There was an error while retrieving your location: " +
+                error.message);
+                break;
+            case 1: //PERMISSION_DENIED
+                alert("The user prevented this page from retrieving a location.");
+                break;
+            case 2:  //POSITION_UNAVAILABLE
+                alert("The browser was unable to determine your location: " +
+                error.message);
+                break;
+            case 3:  //TIMEOUT
+                alert("The browser timed out before retrieving the location.");
+                break;
+        }
+    }
+</script>
+</body>
+</html>
+<!--
+    
+    Optional Geolocation Request Attributes
+
+(1)     enableHighAccuracy ==> Ask browser that, if available, use a higher accuracy-detection mode. This defaults to  false, 
+        but when turned on, it may not cause any difference, or it may cause the  machine to take more time or power to determine location. 
+        
+        The high accuracy setting is only a toggle switch: true or false. The API was not created to allow the accuracy 
+        to be set to various values or a numeric range. Perhaps this will be addressed in future versions of the specification.
+
+(2)    timeout  ==> This optional value, provided in milliseconds, tells the browser the maximum amount of time it is allowed 
+       to calculate the current location. If the calculation does not complete in this amount of time, the error handler is called
+       instead. This value defaults to Infinity, or no limit.
+
+(3)   maximumAge==> This value indicates how old a location value can be before the browser must attempt to recalculate. 
+      It is a value in milliseconds. This value defaults to zero, meaning that the browser must attempt to recalculate a value immediately.
+
+    *******Accuracy*******
+  Accuracy will contain a value in meters that specifies
+  how close the latitude and longitude values are to the
+  actual location, with a 95% confidence level.
+-->
