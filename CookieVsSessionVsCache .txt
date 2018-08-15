@@ -1,0 +1,94 @@
+Cookie                     |      Session
+===========================+====================================
+Cookie can only store      |Session can store any datatype
+"string" datatype.	   |because value is of datatype "object"
+                           |
+Stored on Client State     |Stored on Server Side
+			   |
+Non-secure since stored    |Secured because stored in binary/
+in text format. 	   |encrypted format
+			   |
+May or maynot be individual|Independent i.e. individual for  
+for every client	   |every client
+		 	   |
+Size of cookie is limited  |No limitation on the size or number 
+			   |of sessions
+			   |
+Cookie can be disabled     |Cannot disable Sessions.Can be used 
+			   |without cookies also.
+			   |
+Have both persistent and   |Called as Non-Persisitent Cookies bcz
+non persisitent cookies    |its lifetime can be set manually
+
+-----------------------------------------------------------------------------------------------------------------
+
+CACHE VS COOKIES 
+================
+
+
+What are Cookies?
+
+A cookie is small piece of information stored on your computer by a website you visit. Every time the user loads the website, 
+the browser sends the cookie back to the server to notify the website of the user’s previous activity. Cookies have a certain life span defined by their creators. 4
+At the end of this, a cookie becomes expired. Cookies often track information like how frequently the user visits, what are the times of visits, what banners have been
+clicked on, what button clicked, user preferences, items in shopping cart, etc.
+This allows the site to present you with information customized to fit your needs. Cookies are usually used to store information needed for shorter periods.
+Cookies was first introduced by Netscape and in those earlier stages cookies did not receive good acceptance, since rumours said it might hack your personal data. 
+Later people realized that cookies are actually harmless, and now they are highly accepted.
+
+What are Caches?
+
+A web cache (or HTTP cache) is an information technology for the temporary storage (caching) of web documents, such as HTML pages and images, 
+to reduce bandwidth usage, server load, and perceived lag. 
+A web cache system stores copies of documents passing through it; subsequent requests may be satisfied from the cache if certain conditions are met. 
+A web cache system can refer either to an appliance, or to a software. For example, when you open some websites with large pictures and video’s, 
+it might take a considerable amount of time for the website to load. The web browser stores the site contents like the images, videos, audio etc. 
+on your computer so the next time you load the same website you will find it loading faster.
+
+
+Now let’s see the difference between Cache and Cookies
+
+Although cookies and cache are two ways to store data on client’s machine, but there are difference between cache and cookies and they serve different purposes.
+• Cookie is used to store information to track different characteristics related to user, while cache is used to make the loading of web pages faster.
+• Cookies stores information such as user preferences, while cache will keep resource files such as audio, video or flash files.
+• Typically, cookies expire after some time, but cache is kept in the client’s machine until they are removed manually by the user.
+
+
+Example
+-------
+Suppose we searched for poles on earth in Google.It took 10 min to be searched.We opened a dew links on the search result
+page.Next time when we search for same title , it will take lesser time , to open the search result pages 
+due to *CACHE* .
+
+The links we opened will be highlighted in purple due to *COOKIES*.Even on typing the title in Google ,
+when we  type name partially , Google will pop on whole title highlighted due to *COOKIES*
+
+
+
+--------------------------------------------------------------------------------------------------------------
+
+CACHE vs COOKIES vs SESSION
+============================
+
+A cookie is a small file containing a record that you have been to such and such website, and answered such and such question, or other information about you.
+
+A cache is an area of your hard drive that the browser uses to save frequently-fetched items, so they load faster when you need them.
+
+A session can be several things; for the user of a web browser, it most likely refers to the period of time that a remote website considers you “active”; 
+if you do not make a web request with your browser for a certain time period, your “session” will time out, and you’ll have to log in again.
+
+Example
+-------
+Suppose we open a website , 
+
+When Browser connects to the server it creates a *SESSION* , which the server keeps track of .
+This session maintains our connection and other information server-side.
+
+As we visit the pages on our website,our browser keeps local copies of the page we view to 
+speed up page requests.This local storage of pages is the "CACHE"
+
+The website may send a request to our browser to store info on our client computer.
+It may store login info.This info stored on the client's computer at the server's request is called a "COOKIE"
+
+
+

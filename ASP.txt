@@ -1,0 +1,61 @@
+MVC=>Model View Controller
+
+WebApplication
+
+ASP.NET=>Active Server Pages.
+
+=>MVC
+=>WebForms
+
+WebServer=>A System which serves the requests.It has IIS(Internet Information Services).
+IIS is a service of Windows.
+
+IIS listens to Incoming Internert Traffic or HTTP(Hyper Text Transfer Protocol)
+IIS sends request to ASP.NET runtime which send responds back to client(browser).
+Incoming HTTP request are first to hear the request.
+
+Response consists of (HTML+CSS+JS).
+
+Client communicates with server in HyperText Transfer Protocol.
+
+
+						 CSS
+Css can be written in 3 ways:
+
+1)Inline(Highest Priority)
+2)Embedded(2nd Highest)
+3)External(.css)
+
+
+						Javascript
+JavaScript is a scripting language
+Works in browser environment
+Does not have executable files
+Loosely typed programming lang(we dont have to mention variable datatype while declaration)
+It is object based but not Object Oriented.
+JS is client side script
+
+JS can be written in 3 ways:
+
+1)Inline(Highest Priority)
+2)Embedded(2nd Highest)
+3)External(.css)
+
+Used to manager user interface managed by webPages
+Used to make dynamic Web pages
+
+
+							ASP.NET
+
+ASP.NET webpage is a standard HTML file that contains embedded server site scripts.
+
+
+Server Side State Management
+
+=>Session Management
+=>
+
+						     ASP.NET MVC
+
+MVC is a design pattern
+

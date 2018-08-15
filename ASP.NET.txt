@@ -1,0 +1,107 @@
+ASP.NET is a technology for building powerful, dynamic Web applications and is part of the .NET Framework".
+
+.NET is language independent, which means we can use any .NET supported language to make .NET applications. 
+The most common languages for writing ASP.NET applications are C# and VB.NET.
+
+ASP.NET is basically divided into ASP.NET Web Forms (the original approach) and ASP.NET MVC. 
+
+The Core version marks a huge change in the .NET framework, where it goes from an (almost) exclusive 
+Windows-thing to a multi-platform framework for Windows, macOS and several Linux distributions.
+It makes it easier to get ASP.NET websites hosted on other platforms than Windows Server,e.g. on a Linux server.
+
+CodeBehind
+----------
+
+We added a scripting block (using <% %>), where we wrote a line of C# code to use the label.
+MS introduced CodeBehind, a technique which allows us to completely separate markup (HTML, CSS etc.) and code (C#, VB.NET etc.) and remove the script block (from <% to %>).
+
+All ASP.NET pages inherits from the Page class, or another class which inherits from the Page class.
+
+Page_Load method, is called everytime the page is loaded.  
+
+Events
+-------
+
+ASP.NET is an event-driven way of making web applications.
+
+Here we have events, which are either activated by the user in one way or another.
+
+Events Include:
+
+DropDown
+Button
+TextBox
+
+UserControls
+------------
+
+A UserControl is a separate, reusable part of a page. We can put a piece of a page in a UserControl, and then reuse it from a different location.
+
+It is like a regular page, with an optional CodeBehind file.
+
+UserControls can be included on multiple pages, while a page can't.
+
+UserControls are used much like regular server controls, and they can be added to a page declaratively, just like server controls can.
+
+A big advantage of the UserControl is that it can be cached, 
+Using the OutputCache functionality,instead of caching an entire page, we may cache only the UserControl,so that the rest of the page is still re-loaded on each request.
+An example where a UserControl could come in handy, is a control for showing information about a certain user on a community website
+
+
+Validation
+----------
+
+With ASP.NET, webdevelopers were finally given a good, standard set of tools for validating forms.
+
+The validation controls of ASP.NET is based on both clientside and serverside technology, which brings the best from both worlds, to make sure that validating a form is as easy as ever.
+
+Validation make sure that a form field has been properly filled by the user.
+
+Validation is only performed serverside if necessary
+
+=> RequiredFieldValidator: Makes sure that the user has entered something in a TextBox control.
+
+=>Compare Validator:Compares two values (less than ,greater than or equal)
+
+=>Range Validator: Input is within a range
+
+=>Regular expression: Checks kind of string.
+
+=>Custom Validator:Use our own validation .Control allows us to validate both clientside and serverside validation.Serverside validation uses postback to validate.
+
+Caching
+-------
+
+Caching is easier in ASP.NET
+2 different types of caching:
+=>Output Caching.
+=>Standard Caching.
+
+Output Caching=>It is the easiest way of caching content with ASP.NET 
+
+Output Cache
+-----------
+ 1.Varybyparam :Specifies the list of parameters which the cache should be varied by..
+ 
+ 2.Varybycontrol:varies the cache depending on the value of specified control.
+   i.e. Content of page varies according to the value of the control(dropdownlist)
+
+ 3.Varybycustom:Helps to handle variations by ourself,by setting a custom string.
+  
+ 4.Varybyheader:Vary the content  based on one or more  headers that browser send.
+
+Output Cache Substitution
+-------------------------
+<asp:Substitution> tag helps to control which part of page would be cached and which parts would be generated on each request.
+Now we can control if just a small part of the page is refreshed on each request.
+
+
+Session
+------
+
+=>Sessions can be used to store even complex data for the user just like cookies. 
+=>Sessions will use cookies to store the data, unless you explicitly tell it not to. 
+=>Sessions can be used easily in ASP.NET with the Session object. 
+=>Session values are tied to an instance of our browser. If we close down the browser, the saved value(s) will usually be "lost".
+=>If the webserver recycles the aspnet_wp.exe process, sessions are lost, since they are saved in memory as well. 
+=>This can be avoided by saving session states on a separate StateServer or by saving to a SQL server, 
