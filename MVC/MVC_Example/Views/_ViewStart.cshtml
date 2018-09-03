@@ -1,0 +1,16 @@
+﻿@*
+    View is a user interface.
+    View displays data from the model to the user and also enables them to modify the data.
+    Different action methods of a single controller class can render different views,
+
+    So the Views folder contains a separate folder for each controller with the same name as controller,
+    in order to accommodate multiple views
+
+    Microsoft introduced the Razor view engine and packaged with MVC 3
+    We can write a mix of html tags and server side code in razor view.
+    Razor uses @ character for server side code instead of traditional <% %>
+*@
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
